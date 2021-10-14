@@ -1,0 +1,12 @@
+.card-title{
+    font-family: 'Pokemon Solid', sans-serif;
+    color: yellow;
+    -webkit-text-stroke-width: 2px;
+    -webkit-text-stroke-color: blue;
+    font-size: x-large;                                           
+}
+
+label{
+    margin-left: 95px;
+    padding: 5px;
+}

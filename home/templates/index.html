@@ -1,0 +1,122 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        @import url('http://fonts.cdnfonts.com/css/pokemon-solid');
+    </style>
+    <link href="{% static 'home/style.css' %}" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
+    <title>PokeCards</title>
+</head>
+<body>
+    <div class="container mt-3" >
+        {% if success is False %}
+        <div class="d-flex justify-content-center">
+            <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+            <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Pokemon</button>
+            <button class="nav-link disabled" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Stats</button>
+            <button class="nav-link disabled" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Moves</button>
+            <button class="nav-link disabled" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Evolutions</button>
+            </div>
+
+            <div class="tab-content " id="v-pills-tabContent">
+                <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                    <div class="card border-dark" style="width: 400px; height: 500px;">
+                        <img src="{% static 'home/whos.png' %}" class="card-img" alt="..." style="width: 99%; height: 99%; margin: auto;">
+                        <div class="card-img-overlay">
+                        <h5 class="card-title">{{name.capitalize}}</h5>
+                        </div>
+                    </div>
+                </div>
+                <!-- <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
+                <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
+                <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div> -->
+            </div>
+        </div>
+        {% elif success is True %}
+        
+        
+            <div class="d-flex justify-content-center">
+
+                <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                <button class="nav-link active" id="v-pills-home-tab" data-bs-toggle="pill" data-bs-target="#v-pills-home" type="button" role="tab" aria-controls="v-pills-home" aria-selected="true">Pokemon</button>
+                <button class="nav-link" id="v-pills-profile-tab" data-bs-toggle="pill" data-bs-target="#v-pills-profile" type="button" role="tab" aria-controls="v-pills-profile" aria-selected="false">Stats</button>
+                <button class="nav-link" id="v-pills-messages-tab" data-bs-toggle="pill" data-bs-target="#v-pills-messages" type="button" role="tab" aria-controls="v-pills-messages" aria-selected="false">Moves</button>
+                <button class="nav-link" id="v-pills-settings-tab" data-bs-toggle="pill" data-bs-target="#v-pills-settings" type="button" role="tab" aria-controls="v-pills-settings" aria-selected="false">Evolutions</button>
+                </div>
+
+                <div class="tab-content " id="v-pills-tabContent">
+
+                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                        <div class="card border-dark" style="width: 400px; height: 500px;">
+                            <img src="{{sprite}}" class="card-img" alt="..." style="width: 300px; margin: auto;">
+                            <div class="card-img-overlay">
+                                <h5 class="card-title">{{name.capitalize}}</h5>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <div class="card border-dark" style="width: 400px; height: 500px;">
+                                <img src="{{sprite}}" class="card-img" alt="..." style="width: 300px; margin: auto;">
+                                <div class="card-img-overlay">
+                                    <h5 class="card-title">{{name.capitalize}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <div class="card border-dark" style="width: 400px; height: 500px;">
+                                <img src="{{sprite}}" class="card-img" alt="..." style="width: 300px; margin: auto;">
+                                <div class="card-img-overlay">
+                                    <h5 class="card-title">{{name.capitalize}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                        <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                            <div class="card border-dark" style="width: 400px; height: 500px;">
+                                <img src="{{sprite}}" class="card-img" alt="..." style="width: 300px; margin: auto;">
+                                <div class="card-img-overlay">
+                                    <h5 class="card-title">{{name.capitalize}}</h5>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        
+        
+        <!-- <div class="card bg-dark text-white" style="width: 400px; height: 500px; margin: auto;" >
+            <img src="{{sprite}}" class="card-img" alt="..." style="width: 300px; margin: auto;">
+            <div class="card-img-overlay">
+            <h5 class="card-title">{{name.capitalize}}</h5>
+            </div>
+        </div> -->
+
+        <!-- <div class="text-center">
+            <img src="{{ sprite }}" alt="" class="img-thumbnail rounded">
+            <p>Nome: {{name}}</p>
+        </div> -->
+        {% endif %}
+
+        <div class="text-center mt-3">
+            <form method="POST"> {% csrf_token %}
+                    {{form.as_p}}
+                    <button class="btn btn-success" type="submit" style="margin-left: 95px;">Catch it!</button>
+            </form>
+        </div>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ka7Sk0Gln4gmtz2MlQnikT1wXgYsOg+OMhuP+IlRH9sENBO0LRn5q+8nbTov4+1p" crossorigin="anonymous"></script>
+</body>
+</html>
