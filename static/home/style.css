@@ -1,4 +1,4 @@
-.card-title{
+#title, #title2{
     font-family: 'Pokemon Solid', sans-serif;
     color: yellow;
     -webkit-text-stroke-width: 2px;
@@ -6,7 +6,8 @@
     font-size: x-large;                                           
 }
 
-label{
-    margin-left: 95px;
-    padding: 5px;
+span{
+    width: 140px;
+    text-align: center;
 }
+
